@@ -1,6 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {PRIZES,ROUNDS,newGame,chooseCase,openCase,bankOffer,rejectOffer,finishGame} from '../engine.js';
+import {money} from '../currency.js';
+test('the 26 reference prizes and Peruvian sol formatting are exact',()=>{
+  assert.deepEqual(PRIZES,[.01,1,5,10,25,50,75,100,200,300,400,500,750,1000,5000,10000,25000,50000,75000,100000,200000,300000,400000,500000,750000,1000000]);
+  assert.equal(money(.01),'S/ 0.01');assert.equal(money(1000000),'S/ 1,000,000');assert.equal(money(1.25),'S/ 1.25');assert.equal(money(750),'S/ 750');
+});
 test('all prizes appear exactly once; invalid moves preserve state',()=>{const g=newGame();assert.deepEqual(g.cases.map(c=>c.amount).sort((a,b)=>a-b),PRIZES);assert.equal(openCase(g,1),null);assert.equal(chooseCase(g,27),false);assert.equal(chooseCase(g,17),true);assert.equal(chooseCase(g,2),false);assert.equal(openCase(g,17),null);assert.equal(finishGame(g),null);openCase(g,1);assert.equal(openCase(g,1),null);assert.equal(g.openedThisRound,1);});
 test('all nine rounds reach two cases, allowing keep or swap',()=>{for(const swap of [false,true]){const g=newGame();chooseCase(g,17);for(const size of ROUNDS){for(let i=0;i<size;i++)assert.ok(openCase(g,g.cases.find(c=>!c.opened&&c.id!==17).id));assert.equal(g.phase,'offer');assert.equal(openCase(g,g.cases.find(c=>!c.opened&&c.id!==17).id),null);const offer=bankOffer(g);assert.ok(offer>0&&offer<=Math.max(...g.cases.filter(c=>!c.opened).map(c=>c.amount)));assert.ok(rejectOffer(g));}assert.equal(g.phase,'final');assert.equal(g.cases.filter(c=>!c.opened).length,2);const result=finishGame(g,{swap});assert.equal(result.amount,result.chosen.amount);assert.equal(result.swapped,swap);assert.equal(result.chosen.id===17,!swap);assert.equal(g.phase,'done');assert.equal(finishGame(g),null);}});
 test('accepting offer pays the agreed amount and closes game',()=>{const g=newGame();chooseCase(g,1);for(let i=2;i<=7;i++)openCase(g,i);const offer=bankOffer(g);const result=finishGame(g,{accept:true});assert.equal(result.amount,offer);assert.equal(result.accepted,true);assert.equal(g.phase,'done');assert.equal(openCase(g,8),null);});

@@ -10,6 +10,9 @@ export class GameAudio {
     gain.gain.setValueAtTime(0,t);gain.gain.linearRampToValueAtTime(volume,t+.015);gain.gain.exponentialRampToValueAtTime(.0001,t+duration);osc.connect(gain);gain.connect(this.ctx.destination);osc.start(t);osc.stop(t+duration+.02);this.nodes.add(osc);osc.onended=()=>{this.nodes.delete(osc);osc.disconnect();gain.disconnect();};
   }
   play(name){
+    if(name==='intro'){[261.63,392,523.25,659.25].forEach((f,i)=>this.tone(f,.65,i*.22,'sine',.05));}
+    if(name==='shuffle'){for(let i=0;i<14;i++)this.tone(180+(i%4)*90,.065,i*.16,'triangle',.04);this.tone(65,2.4,0,'sine',.06);}
+    if(name==='sad'){[293.66,261.63,220,146.83].forEach((f,i)=>this.tone(f,.8,i*.25,'sine',.07));}
     if(name==='select'){this.tone(440,.18);this.tone(660,.3,.1);}
     if(name==='click')this.tone(380,.055,0,'sine',.035);
     if(name==='suspense'){this.tone(55,1.9,0,'sine',.13);this.tone(58,1.9,0,'sine',.05);for(let i=0;i<9;i++)this.tone(125+i*17,.09,i*.19,'triangle',.045);}
