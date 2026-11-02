@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f18">
+  <meta name="description" content="26 maletines, una decisión final. Juega Último Maletín: desafía a la banca, confía en tu instinto y descubre tu premio.">
+  <title>Último Maletín — Tu suerte. Tu instinto.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="header shell">
+    <a class="brand" href="./" aria-label="Último Maletín, inicio"><span class="brand-case" aria-hidden="true"></span><span>ÚLTIMO <b>MALETÍN</b></span></a>
+    <nav aria-label="Opciones del juego"><span id="round-label" class="round-label"></span><button id="help" class="text-button">Cómo jugar</button><span class="nav-divider"></span><button id="sound" class="icon-button" aria-label="Silenciar sonido" aria-pressed="false"></button></nav>
+  </header>
+  <main>
+    <section id="home" class="shell home">
+      <div class="hero">
+        <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> 26 MALETINES · UNA DECISIÓN FINAL</p>
+          <h1>Tu suerte.<br>Tu instinto.<br>Tu último <em>maletín.</em></h1>
+          <p class="hero-description">Elige un maletín, escucha a la banca y decide hasta dónde arriesgar. El próximo millón podría ser tuyo.</p>
+          <div class="hero-actions"><button id="play" class="button gold">Jugar ahora <span aria-hidden="true">↗</span></button><button id="hero-help" class="button secondary">Cómo jugar</button></div>
+          <p class="small-note"><span></span> Sin registro <i>·</i> Dinero ficticio <i>·</i> Sin apuestas</p>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="halo"></div><div class="hero-cases"><div class="case hero-case side left"><span class="case-number">08</span></div><div class="case hero-case chosen"><span class="case-number">17</span></div><div class="case hero-case side right"><span class="case-number">23</span></div></div><div class="hero-prize"><span class="eyebrow prize-label">EL PREMIO MÁXIMO</span><strong>$1.000.000</strong><span class="prize-caption">Un maletín lo cambia todo.</span></div></div>
+      </div>
+      <div class="steps"><div><span class="step-number">01</span><span><b>Elige tu maletín</b><small>Guarda una posibilidad.</small></span><span class="step-arrow">↗</span></div><div><span class="step-number">02</span><span><b>Abre y descubre</b><small>Cada apertura cambia el juego.</small></span><span class="step-arrow">↗</span></div><div><span class="step-number">03</span><span><b>Acepta o arriesga</b><small>La última palabra es tuya.</small></span></div></div>
+    </section>
+    <section id="game" class="shell game" hidden>
+      <div class="game-top"><div><p class="eyebrow" id="stage-label">EL PRIMER PASO</p><h1 id="game-title">Elige tu maletín.</h1><p id="game-subtitle">Confía en tu instinto. Lo guardarás hasta el final.</p></div><button id="restart" class="text-button restart">↻ <span>Nueva partida</span></button></div>
+      <div class="game-layout"><aside class="prize-panel panel"><h2>PREMIOS MENORES</h2><div id="low-prizes" class="prize-list"></div></aside><section class="board panel" aria-label="Tablero de maletines"><div class="board-top"><span id="board-status">TU SUERTE EMPIEZA AQUÍ</span><span id="case-count">26 maletines</span></div><div id="cases" class="case-grid"></div><div class="board-bottom"><div id="reserved" class="reserved"><span class="empty-case">?</span><div><span class="eyebrow">TU MALETÍN</span><p>Aún por elegir</p></div></div><div id="progress" class="round-progress" aria-label="Progreso de la ronda"></div></div></section><aside class="prize-panel panel"><h2>PREMIOS MAYORES</h2><div id="high-prizes" class="prize-list high"></div></aside></div>
+      <div class="bank-strip panel"><span class="phone-icon" aria-hidden="true">♧</span><div><span class="eyebrow">LA BANCA</span><p id="bank-status">Está observando tus movimientos.</p></div><div id="last-offer"></div></div>
+    </section>
+  </main>
+  <footer class="shell footer"><span>Confía en tu instinto.</span><span>Un juego de azar, solo por diversión.</span><a href="https://github.com/Joaqx3wa/Ultimo-Maletin" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+  <dialog id="modal"><div id="modal-content"></div></dialog>
+  <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="confetti" aria-hidden="true"></div>
+</body>
+</html>

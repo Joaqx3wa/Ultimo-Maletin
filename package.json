@@ -1,0 +1,1 @@
+{"name":"ultimo-maletin","version":"1.0.0","private":true,"type":"module","description":"Juego de maletines y ofertas de la banca con estética moderna.","scripts":{"test":"node --test tests/engine.test.js","start":"node server.js"}}
