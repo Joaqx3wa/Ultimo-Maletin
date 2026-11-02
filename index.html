@@ -6,10 +6,10 @@
   <meta name="description" content="26 maletines, una decisión final. Juega Último Maletín: desafía a la banca, confía en tu instinto y descubre tu premio.">
   <title>Último Maletín — Tu suerte. Tu instinto.</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=3">
-  <link rel="stylesheet" href="./game-enhancements.css?v=3">
-  <link rel="stylesheet" href="./screen-layout.css?v=3">
-  <script type="module" src="./app.js?v=3"></script>
+  <link rel="stylesheet" href="./styles.css?v=4">
+  <link rel="stylesheet" href="./game-enhancements.css?v=4">
+  <link rel="stylesheet" href="./screen-layout.css?v=4">
+  <script type="module" src="./app.js?v=4"></script>
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
@@ -33,9 +33,11 @@
     <section id="game" class="shell game" hidden>
       <div class="game-top"><div><p class="eyebrow" id="stage-label">EL PRIMER PASO</p><h1 id="game-title">Elige tu maletín.</h1><p id="game-subtitle">Confía en tu instinto. Lo guardarás hasta el final.</p></div><button id="restart" class="text-button restart" aria-label="Nueva partida">↻ <span>Nueva partida</span></button></div>
       <div id="selection-guide" class="selection-guide" role="status"></div>
+      <div class="game-status panel" aria-label="Tu maletín y la banca">
       <div id="player-dock" class="player-dock panel" hidden><div id="reserved" class="reserved"></div><span class="dock-note">RESERVADO PARA TI <span aria-hidden="true">✦</span><small>Su valor sigue siendo un secreto.</small></span></div>
-      <div class="game-layout"><aside class="prize-panel panel"><h2>PREMIOS MENORES</h2><div id="low-prizes" class="prize-list"></div></aside><section class="board panel" aria-label="Tablero de maletines"><div class="board-top"><span id="board-status">TU SUERTE EMPIEZA AQUÍ</span><span id="case-count">26 maletines</span></div><div id="cases" class="case-grid"></div><div class="board-bottom"><span id="board-instruction"></span><div id="progress" class="round-progress" aria-label="Progreso de la ronda"></div></div><button id="intro-action" class="button gold" hidden>Ocultar premios y barajar →</button></section><aside class="prize-panel panel"><h2>PREMIOS MAYORES</h2><div id="high-prizes" class="prize-list high"></div></aside></div>
       <div class="bank-strip panel"><span id="bank-phone" class="bank-phone" aria-hidden="true"></span><div><span class="eyebrow">LA BANCA</span><p id="bank-status">Está observando tus movimientos.</p></div><div id="last-offer"></div></div>
+      </div>
+      <div class="game-layout"><aside class="prize-panel panel"><h2>PREMIOS MENORES</h2><div id="low-prizes" class="prize-list"></div></aside><section class="board panel" aria-label="Tablero de maletines"><div class="board-top"><span id="board-status">TU SUERTE EMPIEZA AQUÍ</span><span id="case-count">26 maletines</span></div><div id="cases" class="case-grid"></div><div class="board-bottom"><span id="board-instruction"></span><div id="progress" class="round-progress" aria-label="Progreso de la ronda"></div></div><button id="intro-action" class="button gold" hidden>Ocultar premios y barajar →</button></section><aside class="prize-panel panel"><h2>PREMIOS MAYORES</h2><div id="high-prizes" class="prize-list high"></div></aside></div>
     </section>
   </main>
   <footer class="shell footer"><span>Confía en tu instinto.</span><span>Un juego de azar, solo por diversión.</span><a href="https://github.com/Joaqx3wa/Ultimo-Maletin" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
