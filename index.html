@@ -6,15 +6,16 @@
   <meta name="description" content="26 maletines, una decisión final. Juega Último Maletín: desafía a la banca, confía en tu instinto y descubre tu premio.">
   <title>Último Maletín — Tu suerte. Tu instinto.</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./game-enhancements.css">
-  <script type="module" src="./app.js"></script>
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="stylesheet" href="./game-enhancements.css?v=3">
+  <link rel="stylesheet" href="./screen-layout.css?v=3">
+  <script type="module" src="./app.js?v=3"></script>
 </head>
 <body>
   <div class="ambient" aria-hidden="true"></div>
   <header class="header shell">
     <a class="brand" href="./" aria-label="Último Maletín, inicio"><span class="brand-case" aria-hidden="true"></span><span>ÚLTIMO <b>MALETÍN</b></span></a>
-    <nav aria-label="Opciones del juego"><span id="round-label" class="round-label"></span><button id="help" class="text-button">Cómo jugar</button><span class="nav-divider"></span><button id="sound" class="icon-button" aria-label="Silenciar sonido" aria-pressed="false"></button></nav>
+    <nav aria-label="Opciones del juego"><span id="round-label" class="round-label"></span><button id="help" class="text-button">Cómo jugar</button><span class="nav-divider"></span><button id="effects" class="icon-button" aria-label="Reducir efectos de movimiento" aria-pressed="true" title="Efectos activados"></button><button id="sound" class="icon-button" aria-label="Silenciar sonido" aria-pressed="false"></button></nav>
   </header>
   <main>
     <section id="home" class="shell home">
@@ -38,7 +39,7 @@
     </section>
   </main>
   <footer class="shell footer"><span>Confía en tu instinto.</span><span>Un juego de azar, solo por diversión.</span><a href="https://github.com/Joaqx3wa/Ultimo-Maletin" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
-  <dialog id="modal"><div id="confetti" aria-hidden="true"></div><div id="modal-content"></div></dialog>
+  <dialog id="modal"><div id="confetti" popover="manual" aria-hidden="true"></div><div id="modal-content"></div></dialog>
   <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>

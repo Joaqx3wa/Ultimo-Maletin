@@ -8,12 +8,16 @@ Primero se presentan los 26 premios con animaciones. Pulsa **Ocultar premios y b
 
 Todos los importes se expresan en soles peruanos (S/). Premios: 0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1,000, 5,000, 10,000, 25,000, 50,000, 75,000, 100,000, 200,000, 300,000, 400,000, 500,000, 750,000 y 1,000,000.
 
-- Diseño adaptable a celulares y escritorio.
+- Diseño adaptable a celulares y escritorio que distribuye el tablero, los premios y la banca dentro de la pantalla.
+- Maletines con proporción fija y ancho limitado; los importes tienen tipografía más grande y en negrita.
+- Primer clic para marcar un maletín y segundo clic en el mismo maletín para confirmar su apertura.
 - Presentación animada de los premios, mezcla de maletines y traslado de tu elección a una zona reservada.
 - Suspenso antes de cada apertura y teléfono de la banca ilustrado con SVG y animado durante las llamadas.
 - Destellos y confeti al eliminar premios pequeños; luz cálida roja, partículas y reacción de pena al perder premios grandes. El desenlace adapta sus efectos al premio final.
 - Sonidos originales sintetizados con Web Audio; control de silencio persistente.
-- Navegación por teclado, diálogos accesibles y respeto a la preferencia de movimiento reducido.
+- Animación de tapa al abrir y cerrar maletines, mezcla entre posiciones y transiciones de entrada y salida de los diálogos.
+- Confeti a pantalla completa en una capa superior al abrir el último maletín, incluso si el premio es pequeño.
+- Navegación por teclado y diálogos accesibles. El botón de destellos permite reducir las animaciones; la preferencia se guarda en el navegador. Los efectos están activados por defecto.
 - Sin cuentas, apuestas, pagos ni premios reales. El dinero es ficticio.
 
 ## Desarrollo local

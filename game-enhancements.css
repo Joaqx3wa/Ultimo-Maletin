@@ -66,4 +66,3 @@
 @media(max-width:900px){.intro-case-value{font-size:11px}}
 @media(max-width:650px){.case-grid.presenting-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.intro-case-value{font-size:12px}}
 @media(max-width:380px){.intro-case-value{font-size:11px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.case-button.presented-case{opacity:1}}
